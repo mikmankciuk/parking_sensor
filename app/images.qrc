@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>steeringWheel.png</file>
+        <file>speedGraph.png</file>
+    </qresource>
+</RCC>

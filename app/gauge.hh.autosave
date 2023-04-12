@@ -1,0 +1,118 @@
+/// \file
+/// \brief gauge.h
+
+#ifndef GAUGE_H
+#define GAUGE_H
+
+#include <QPointF>
+#include <QPolygon>
+#include <QPainterPath>
+#include "drawableobject.hh"
+
+
+//! \briefclass for making diagonal
+class Gauge : public DrawableObject
+{
+public:
+    /*! Constructor */
+    Gauge();
+
+    //! Constructor
+    /*!
+      \param x - flaot argument representing position in X asxis.
+      \param y - float argument representing position in Y axis.
+      \param r - flaot argument representing rotation.
+      \param s - float argument representing size.
+      \return no return.
+    */
+    Gauge(float x, float y, float r, float s);
+
+    //! Destructor */
+    ~Gauge();
+
+    //! Return position of the uppermost point of the gauge.
+    /*! \return gaugeTop.
+     */
+    QPointF getGaugeTop() const;
+
+    //! Set new value for the uppermost point of the gauge.
+    /*!
+      \param newGaugeTop - QPointF new uppermost point coordinates.
+      \return no return.
+    */
+    void setGaugeTop(QPointF newGaugeTop);
+
+
+    //! Return position of leftmost point of the .
+    /*! \return gaugeLeft.
+     */
+    QPointF getGaugeLeft() const;
+
+    //! Set new value for the leftmost point of the gauge.
+    /*!
+      \param newGaugeLeft - QPointF argument.
+      \return no return.
+    */
+    void setGaugeLeft(QPointF newGaugeLeft);
+
+
+    //! Return position of the rightmost point of the gauge.
+    /*! \return gaugeRight.
+     */
+    QPointF getGaugeRight() const;
+
+    //! Set new value for the rightmost point of the gauge.
+    /*!
+      \param newGaugeRight - QPointF argument.
+      \return no return.
+    */
+    void setGaugeRight(QPointF newGaugeRight);
+
+
+    //! Return position of the bottommost point of the gauge.
+    /*! \return gaugeBottom.
+     */
+    QPointF getGaugeBottom() const;
+
+    //! Set new value for the bottommost point of the gauge.
+    /*!
+      \param newGaugeBottom - QPointF argument.
+      \return no return.
+    */
+    void setGaugeBottom(QPointF newGaugeBottom);
+
+
+    //! Return position of the center point of the gauge.
+    /*! \return gaugeCenter.
+     */
+    QPointF getGaugeCenter() const;
+
+    //! Set new value for the center point of the gauge.
+    /*!
+      \param newGaugeCenter - QPointF argument.
+      \return no return.
+    */
+    void setGaugeCenter(QPointF newGaugeCenter);
+
+
+    //! Calculate Gauges points position based its position in X and Y axis and its size.
+    /*!
+      \return no return.
+    */
+    void updatePoints();
+
+
+private:
+    //! Private variable - Uppermost point of the gauge.
+    QPointF gaugeTop;
+    //! Private variable - Leftmost point of the gauge.
+    QPointF gaugeLeft;
+    //! Private variable - Rightmost point of the gauge.
+    QPointF gaugeRight;
+    //! Private variable - Bottommost point of the gauge.
+    QPointF gaugeBottom;
+    //! Private variable - Center of the gauge.
+    QPointF gaugeCenter;
+};
+
+#endif // GAUGE_H
